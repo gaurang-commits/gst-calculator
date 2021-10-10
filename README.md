@@ -1,9 +1,9 @@
 # Simplifies GST calculation and operations
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/gaurang-commits/gst-calculator.svg?style=flat-square)](https://packagist.org/packages/gaurang-commits/gst-calculator)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/gaurangsharma/gst-calculator.svg?style=flat-square)](https://packagist.org/packages/gaurangsharma/gst-calculator)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/gaurang-commits/gst-calculator/Tests?label=tests)](https://github.com/gaurang-commits/gst-calculator/actions?query=workflow%3ATests+branch%3Amaster)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/gaurang-commits/gst-calculator/Check%20&%20fix%20styling?label=code%20style)](https://github.com/gaurang-commits/gst-calculator/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/gaurang-commits/gst-calculator.svg?style=flat-square)](https://packagist.org/packages/gaurang-commits/gst-calculator)
+[![Total Downloads](https://img.shields.io/packagist/dt/gaurangsharma/gst-calculator.svg?style=flat-square)](https://packagist.org/packages/gaurangsharma/gst-calculator)
 
 ## Installation
 
