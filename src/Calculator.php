@@ -37,16 +37,11 @@ class Calculator
     /**
      * Get state details
      * @param mixed $state state parameters
-     * @throws Throwable
-     * @return Throwable|StateIdentifier
+     * @return StateIdentifier
      */
-    public static function stateDetails($state)
+    public static function stateDetails($state) : StateIdentifier
     {
-        try {
             return new StateIdentifier($state);
-        } catch (Throwable $e) {
-            return $e;
-        }
     }
 
     /**
@@ -55,16 +50,11 @@ class Calculator
      * @param mixed $to destination state
      * @param float $cost cost for calculation
      * @param float $rate GST rate
-     * @throws Throwable
-     * @return Throwable|StateWiseCalculation
+     * @return StateWiseCalculation
      */
-    public static function stateData($from, $to, $cost, $rate)
+    public static function stateData($from, $to, $cost, $rate) : StateWiseCalculation
     {
-        try {
             return new StateWiseCalculation($from, $to, $cost, $rate);
-        } catch (Throwable $e) {
-            return $e;
-        }
     }
 
     /**
