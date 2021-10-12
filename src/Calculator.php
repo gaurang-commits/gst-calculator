@@ -14,8 +14,8 @@ class Calculator
 
     public function __construct(float $cost, float $rate)
     {
-            $this->cost = $cost;
-            $this->rate = $rate;
+        $this->cost = $cost;
+        $this->rate = $rate;
     }
 
     /**
