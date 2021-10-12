@@ -39,9 +39,9 @@ class Calculator
      * @param mixed $state state parameters
      * @return StateIdentifier
      */
-    public static function stateDetails($state) : StateIdentifier
+    public static function stateDetails($state): StateIdentifier
     {
-            return new StateIdentifier($state);
+        return new StateIdentifier($state);
     }
 
     /**
@@ -52,9 +52,9 @@ class Calculator
      * @param float $rate GST rate
      * @return StateWiseCalculation
      */
-    public static function stateData($from, $to, $cost, $rate) : StateWiseCalculation
+    public static function stateData($from, $to, $cost, $rate): StateWiseCalculation
     {
-            return new StateWiseCalculation($from, $to, $cost, $rate);
+        return new StateWiseCalculation($from, $to, $cost, $rate);
     }
 
     /**
