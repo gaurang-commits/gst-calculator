@@ -15,14 +15,15 @@ it('can get total amount including gst', function () {
 it('can get gst by state', function () {
     $gstType = Calculator::stateData("HR", 7, 1020, 5)->getGstType();
     $expectedResponse = [
-        'igst' => 5
+        'igst' => 5,
     ];
     $this->assertEquals($gstType, $expectedResponse);
 });
 
 it('can get gst by state failure', function () {
     $gstType = Calculator::stateData("HR", 7722, 1020, 5)->getGstType();
-    expect($gstType)->toBeInstanceOf(Error::class);;
+    expect($gstType)->toBeInstanceOf(Error::class);
+    ;
 });
 
 it('can get get state details', function () {
@@ -36,15 +37,16 @@ it('can get get state details', function () {
         'destination_state' => [
             'name' => 'Delhi',
             'alpha_code' => 'DL',
-            'state_code' => 7
-        ]
+            'state_code' => 7,
+        ],
     ];
     $this->assertEquals($gstStateDetails, $expectedResponse);
 });
 
 it('can get get state details failure', function () {
     $gstStateDetails = Calculator::stateData("HR", 788, 1020, 5)->getStateDetails();
-    expect($gstStateDetails)->toBeInstanceOf(Error::class);;
+    expect($gstStateDetails)->toBeInstanceOf(Error::class);
+    ;
 });
 
 it('can get gst all data', function () {
@@ -64,7 +66,7 @@ it('can get gst all data', function () {
         'sgst' => 2.5,
         'gst_amount' => 51.0,
         'cost' => 1020,
-        'total' => 1071.0
+        'total' => 1071.0,
     ];
     $this->assertEquals($allData, $expectedResponse);
 });
@@ -76,7 +78,7 @@ it('can get state code from input failure', function () {
 });
 
 it('can find state code from input failure', function () {
-    $stateData = Calculator::stateDetails("HR")->findStateFromInput([0=>null,1=>null]);
+    $stateData = Calculator::stateDetails("HR")->findStateFromInput([0 => null,1 => null]);
     expect($stateData)->toBeInstanceOf(Error::class);
 });
 

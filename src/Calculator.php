@@ -3,9 +3,9 @@
 namespace Gaurang\GstCalculator;
 
 use Exception;
-use Throwable;
 use Gaurang\GstCalculator\Builder\StateIdentifier;
 use Gaurang\GstCalculator\Results\StateWiseCalculation;
+use Throwable;
 
 class Calculator
 {
@@ -18,7 +18,7 @@ class Calculator
         try {
             $this->cost = $cost;
             $this->rate = $rate;
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -34,7 +34,7 @@ class Calculator
     {
         try {
             return new static($cost, $rate);
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -45,11 +45,11 @@ class Calculator
      * @throws Exception
      * @return StateIdentifier
      */
-    public static function stateDetails($state) : StateIdentifier
+    public static function stateDetails($state): StateIdentifier
     {
         try {
             return new StateIdentifier($state);
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -63,11 +63,11 @@ class Calculator
      * @throws Exception
      * @return StateWiseCalculation
      */
-    public static function stateData($from, $to, $cost, $rate) : StateWiseCalculation
+    public static function stateData($from, $to, $cost, $rate): StateWiseCalculation
     {
         try {
             return new StateWiseCalculation($from, $to, $cost, $rate);
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -81,7 +81,7 @@ class Calculator
     {
         try {
             return ($this->cost * $this->rate) / 100;
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -95,10 +95,8 @@ class Calculator
     {
         try {
             return $this->getGst() + $this->cost;
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
-    
-    
 }
