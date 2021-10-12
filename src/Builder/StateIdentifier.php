@@ -1,22 +1,18 @@
 <?php
+
 namespace Gaurang\GstCalculator\Builder;
 
 use Exception;
 use Throwable;
-use Gaurang\GstCalculator\Builder\states;
-
-
 
 class StateIdentifier extends states
 {
-
     public $state;
 
     public $gstType;
 
     public $stateWiseGstCalculations;
 
-    
     public function __construct($state)
     {
         $this->state = $state;
@@ -27,15 +23,14 @@ class StateIdentifier extends states
      * Get state name
      * @throws Exception
      * @return string
-     */ 
+     */
     public function getStateName()
     {
         try {
             return $this->identifyStateData($this->state)[0];
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
-        
     }
 
     /**
@@ -47,7 +42,7 @@ class StateIdentifier extends states
     {
         try {
             return $this->identifyStateData($this->state)[2];
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -61,7 +56,7 @@ class StateIdentifier extends states
     {
         try {
             return $this->identifyStateData($this->state)[1];
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -80,8 +75,9 @@ class StateIdentifier extends states
                     return $key;
                 }
             }
+
             throw new Exception('Invalid input');
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -92,18 +88,19 @@ class StateIdentifier extends states
      * @param float $rate Rate of GST
      * @throws Exception
      * @return array
-     */ 
+     */
     public function taxType($stateParam, $rate)
     {
         try {
             if ($stateParam['source_state']['state_code'] == $stateParam['destination_state']['state_code']) {
-                $returnArr['cgst'] = $rate/2;
-                $returnArr['sgst'] = $rate/2;   
+                $returnArr['cgst'] = $rate / 2;
+                $returnArr['sgst'] = $rate / 2;
             } else {
                 $returnArr['igst'] = $rate;
             }
+
             return $returnArr;
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -117,10 +114,8 @@ class StateIdentifier extends states
     public function findStateFromInput(array $stateParam)
     {
         try {
-
-            if ($this->identifyStateData($stateParam[0]) !== null && 
+            if ($this->identifyStateData($stateParam[0]) !== null &&
                 $this->identifyStateData($stateParam[1]) !== null) {
-                
                 $returnArr = [
                     'source_state' => [
                         'name' => $this->identifyStateData($stateParam[0])[0],
@@ -133,9 +128,10 @@ class StateIdentifier extends states
                         'state_code' => $this->identifyStateData($stateParam[1])[2],
                     ],
                 ];
+
                 return $returnArr;
             }
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -150,21 +146,23 @@ class StateIdentifier extends states
     {
         try {
             if (gettype($stateParam) == 'integer') {
-                if(isset(self::$statesList[$stateParam])) {
+                if (isset(self::$statesList[$stateParam])) {
                     self::$statesList[$stateParam][2] = $stateParam;
+
                     return self::$statesList[$stateParam];
                 } else {
                     throw new Exception('Invalid state code');
                 }
-            } elseif(gettype($stateParam) == 'string') {
+            } elseif (gettype($stateParam) == 'string') {
                 $countChar = strlen($stateParam);
                 if ($countChar == 2) {
                     $stateCode = $this->getStateCodeFromInput($stateParam);
                 } else {
                     $stateCode = $this->getStateCodeFromInput($stateParam);
                 }
-                if(isset(self::$statesList[$stateCode])) {
+                if (isset(self::$statesList[$stateCode])) {
                     self::$statesList[$stateCode][2] = $stateCode;
+
                     return self::$statesList[$stateCode];
                 } else {
                     throw new Exception('Invalid alpha code');
@@ -172,11 +170,8 @@ class StateIdentifier extends states
             } else {
                 throw new Exception('Invalid state entry');
             }
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
-        }  
+        }
     }
-
 }
-
-?>

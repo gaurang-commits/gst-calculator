@@ -2,164 +2,164 @@
 
 namespace Gaurang\GstCalculator\Builder;
 
-class states {
+class states
+{
     public static $statesList = [
         35 => [
             'Andaman and Nicobar Islands',
-            'AN'
+            'AN',
         ],
         37 => [
             'Andhra Pradesh',
-            'AP'
+            'AP',
         ],
         12 => [
             'Arunachal Pradesh',
-            'AR'
+            'AR',
         ],
         18 => [
             'Assam',
-            'AS'
+            'AS',
         ],
         10 => [
             'Bihar',
-            'BR'
+            'BR',
         ],
         4 => [
             'Chandigarh',
-            'CH'
+            'CH',
         ],
         22 => [
             'Chhattisgarh',
-            'CG'
+            'CG',
         ],
         26 => [
             'Dadra and Nagar Haveli',
-            'DN'
+            'DN',
         ],
         25 => [
             'Daman and Diu',
-            'DD'
+            'DD',
         ],
         7 => [
             'Delhi',
-            'DL'
+            'DL',
         ],
         30 => [
             'Goa',
-            'GA'
+            'GA',
         ],
         24 => [
             'Gujarat',
-            'GJ'
+            'GJ',
         ],
         6 => [
             'Haryana',
-            'HR'
+            'HR',
         ],
         2 => [
             'Himachal Pradesh',
-            'HP'
+            'HP',
         ],
         1 => [
             'Jammu and Kashmir',
-            'JK'
+            'JK',
         ],
         20 => [
             'Jharkhand',
-            'JH'
+            'JH',
         ],
         29 => [
             'Karnataka',
-            'KA'
+            'KA',
         ],
         32 => [
             'Kerala',
-            'KL'
+            'KL',
         ],
         38 => [
             'Ladakh',
-            'LA'
+            'LA',
         ],
         31 => [
             'Lakshadweep',
-            'LD'
+            'LD',
         ],
         23 => [
             'Madhya Pradesh',
-            'MP'
+            'MP',
         ],
         27 => [
             'Maharashtra',
-            'MH'
+            'MH',
         ],
         14 => [
             'Manipur',
-            'MN'
+            'MN',
         ],
         17 => [
             'Meghalaya',
-            'ML'
+            'ML',
         ],
         15 => [
             'Mizoram',
-            'MZ'
+            'MZ',
         ],
         13 => [
             'Nagaland',
-            'NL'
+            'NL',
         ],
         21 => [
             'Odisha',
-            'OR'
+            'OR',
         ],
         97 => [
             'Other Territory',
-            'OT'
+            'OT',
         ],
         34 => [
             'Puducherry',
-            'PY'
+            'PY',
         ],
         3 => [
             'Punjab',
-            'PB'
+            'PB',
         ],
         8 => [
             'Rajasthan',
-            'RJ'
+            'RJ',
         ],
         11 => [
             'Sikkim',
-            'SK'
+            'SK',
         ],
         33 => [
             'Tamil Nadu',
-            'TN'
+            'TN',
         ],
         36 => [
             'Telangana',
-            'TS'
+            'TS',
         ],
         16 => [
             'Tripura',
-            'TR'
+            'TR',
         ],
         9 => [
             'Uttar Pradesh',
-            'UP'
+            'UP',
         ],
         5 => [
             'Uttarakhand',
-            'UA'
+            'UA',
         ],
         19 => [
             'West Bengal',
-            'WB'
+            'WB',
         ],
         96 => [
             'Foreign Country',
-            'FC'
+            'FC',
         ],
     ];
 }
-?>

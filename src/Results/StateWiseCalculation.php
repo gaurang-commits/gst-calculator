@@ -3,16 +3,16 @@
 namespace Gaurang\GstCalculator\Results;
 
 use Exception;
-use Throwable;
-use Gaurang\GstCalculator\Calculator;
 use Gaurang\GstCalculator\Builder\StateIdentifier;
+use Gaurang\GstCalculator\Calculator;
+use Throwable;
 
 class StateWiseCalculation extends StateIdentifier
 {
     public $sourceState;
 
     public $destinationState;
-    
+
     public $cost;
 
     public $rate;
@@ -37,8 +37,9 @@ class StateWiseCalculation extends StateIdentifier
             $returnData['gst_amount'] = Calculator::fromCost($this->cost, $this->rate)->getGst();
             $returnData['cost'] = $this->cost;
             $returnData['total'] = $this->cost + $returnData['gst_amount'];
-        return $returnData;
-        } catch(Throwable $e) {
+
+            return $returnData;
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -52,7 +53,7 @@ class StateWiseCalculation extends StateIdentifier
     {
         try {
             return $this->findStateFromInput([$this->sourceState, $this->destinationState]);
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -66,7 +67,7 @@ class StateWiseCalculation extends StateIdentifier
     {
         try {
             return $this->taxType($this->getStateDetails(), $this->rate);
-        } catch(Throwable $e) {
+        } catch (Throwable $e) {
             return $e;
         }
     }
@@ -81,8 +82,9 @@ class StateWiseCalculation extends StateIdentifier
         try {
             $stateData = $this->findStateFromInput([$this->sourceState, $this->destinationState]);
             $data = array_merge($stateData, $this->taxType($stateData, $this->rate));
-        return $data;
-        } catch(Throwable $e) {
+
+            return $data;
+        } catch (Throwable $e) {
             return $e;
         }
     }
