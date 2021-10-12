@@ -43,7 +43,7 @@ class Calculator
      * Get state details
      * @param mixed $state state parameters
      * @throws Exception
-     * @return StateIdentifier
+     * @return object
      */
     public static function stateDetails($state) : StateIdentifier
     {
@@ -61,7 +61,7 @@ class Calculator
      * @param float $cost cost for calculation
      * @param float $rate GST rate
      * @throws Exception
-     * @return StateWiseCalculation
+     * @return object
      */
     public static function stateData($from, $to, $cost, $rate) : StateWiseCalculation
     {
