@@ -5,6 +5,8 @@ namespace Gaurang\GstCalculator\Results;
 use Gaurang\GstCalculator\Builder\StateIdentifier;
 use Gaurang\GstCalculator\Calculator;
 use Throwable;
+use Exception;
+
 
 class StateWiseCalculation extends StateIdentifier
 {
@@ -27,16 +29,20 @@ class StateWiseCalculation extends StateIdentifier
     /**
      * Get all data
      * @throws Throwable
-     * @return array
+     * @return Throwable|array|string
      */
     public function getAllData()
     {
         try {
+            $gst = Calculator::fromCost($this->cost, $this->rate)->getGst();
             $returnData = $this->prepareStateData();
-            $returnData['gst_amount'] = Calculator::fromCost($this->cost, $this->rate)->getGst();
-            $returnData['cost'] = $this->cost;
-            $returnData['total'] = $this->cost + $returnData['gst_amount'];
-
+            if(is_array($returnData)) {
+                $returnData['gst_amount'] = $gst;
+                $returnData['cost'] = $this->cost;
+                $returnData['total'] = $this->cost + $returnData['gst_amount'];
+            } else {
+                throw new Exception('Invalid parameters');
+            }
             return $returnData;
         } catch (Throwable $e) {
             return $e;
@@ -46,7 +52,7 @@ class StateWiseCalculation extends StateIdentifier
     /**
      * Get state details
      * @throws Throwable
-     * @return array
+     * @return Throwable|array|null
      */
     public function getStateDetails()
     {
@@ -60,7 +66,7 @@ class StateWiseCalculation extends StateIdentifier
     /**
      * Get GST type
      * @throws Throwable
-     * @return array
+     * @return Throwable|array
      */
     public function getGstType()
     {
@@ -74,15 +80,19 @@ class StateWiseCalculation extends StateIdentifier
     /**
      * Prepare state array
      * @throws Throwable
-     * @return array
+     * @return Throwable|array
      */
     public function prepareStateData()
     {
         try {
             $stateData = $this->findStateFromInput([$this->sourceState, $this->destinationState]);
             $data = array_merge($stateData, $this->taxType($stateData, $this->rate));
-
-            return $data;
+            if (!empty($data)) {
+                return $data;
+            } else {
+                throw new Exception('Unexpected error');
+            }
+            
         } catch (Throwable $e) {
             return $e;
         }

@@ -71,6 +71,10 @@ it('can get gst all data', function () {
     $this->assertEquals($allData, $expectedResponse);
 });
 
+it('can get gst all data failure', function () {
+    $allData = Calculator::stateData("HRR", 6, 1020, 5)->getAllData();
+    expect($allData)->toBeInstanceOf(Exception::class);
+});
 
 it('can get state code from input failure', function () {
     $stateData = Calculator::stateDetails("HR")->getStateCodeFromInput(2233);
@@ -80,12 +84,6 @@ it('can get state code from input failure', function () {
 it('can find state code from input failure', function () {
     $stateData = Calculator::stateDetails("HR")->findStateFromInput([0 => null,1 => null]);
     expect($stateData)->toBeInstanceOf(Error::class);
-});
-
-
-it('can get gst all data failure', function () {
-    $allData = Calculator::stateData("HRR", 6, 1020, 5)->getAllData();
-    expect($allData)->toBeInstanceOf(Error::class);
 });
 
 

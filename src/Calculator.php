@@ -27,9 +27,9 @@ class Calculator
      * @param float $cost cost for calculation
      * @param float $rate GST rate
      * @throws Throwable
-     * @return string
+     * @return Throwable|self
      */
-    public static function fromCost(float $cost, float $rate): self
+    public static function fromCost(float $cost, float $rate)
     {
         try {
             return new static($cost, $rate);
@@ -42,9 +42,9 @@ class Calculator
      * Get state details
      * @param mixed $state state parameters
      * @throws Throwable
-     * @return object
+     * @return Throwable|StateIdentifier
      */
-    public static function stateDetails($state): StateIdentifier
+    public static function stateDetails($state)
     {
         try {
             return new StateIdentifier($state);
@@ -60,9 +60,9 @@ class Calculator
      * @param float $cost cost for calculation
      * @param float $rate GST rate
      * @throws Throwable
-     * @return object
+     * @return Throwable|StateWiseCalculation
      */
-    public static function stateData($from, $to, $cost, $rate): StateWiseCalculation
+    public static function stateData($from, $to, $cost, $rate)
     {
         try {
             return new StateWiseCalculation($from, $to, $cost, $rate);
@@ -74,9 +74,9 @@ class Calculator
     /**
      * Get GST amount
      * @throws Throwable
-     * @return float
+     * @return Throwable|float
      */
-    public function getGst(): float
+    public function getGst()
     {
         try {
             return ($this->cost * $this->rate) / 100;
@@ -88,9 +88,9 @@ class Calculator
     /**
      * Get total amount including GST
      * @throws Throwable
-     * @return float
+     * @return Throwable|float
      */
-    public function getTotalWithGst(): float
+    public function getTotalWithGst()
     {
         try {
             return $this->getGst() + $this->cost;

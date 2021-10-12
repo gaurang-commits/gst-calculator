@@ -16,13 +16,12 @@ class StateIdentifier extends states
     public function __construct($state)
     {
         $this->state = $state;
-        $this->stateIterator = array_values(self::$statesList);
     }
 
     /**
      * Get state name
      * @throws Throwable
-     * @return string
+     * @return Throwable|string
      */
     public function getStateName()
     {
@@ -36,7 +35,7 @@ class StateIdentifier extends states
     /**
      * Get state code
      * @throws Throwable
-     * @return int
+     * @return Throwable|int
      */
     public function getStateCode()
     {
@@ -50,7 +49,7 @@ class StateIdentifier extends states
     /**
      * Get alpha code
      * @throws Throwable
-     * @return string
+     * @return Throwable|string
      */
     public function getAlphaCode()
     {
@@ -65,7 +64,7 @@ class StateIdentifier extends states
      * Get state code from parameters
      * @param mixed $stateParam State parameter
      * @throws Throwable
-     * @return string
+     * @return Throwable|mixed
      */
     public function getStateCodeFromInput($stateParam)
     {
@@ -87,7 +86,7 @@ class StateIdentifier extends states
      * @param mixed $stateParam State parameter
      * @param float $rate Rate of GST
      * @throws Throwable
-     * @return array
+     * @return Throwable|array
      */
     public function taxType($stateParam, $rate)
     {
@@ -109,7 +108,7 @@ class StateIdentifier extends states
      * Find state data from state parameters
      * @param array $stateParam State parameter
      * @throws Throwable
-     * @return array
+     * @return Throwable|array|null
      */
     public function findStateFromInput(array $stateParam)
     {
@@ -140,7 +139,7 @@ class StateIdentifier extends states
      * Identify the type of state parameter
      * @param mixed $stateParam State parameter
      * @throws Throwable
-     * @return mixed
+     * @return Throwable|mixed
      */
     protected function identifyStateData($stateParam)
     {
