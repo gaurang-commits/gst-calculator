@@ -21,7 +21,7 @@ class StateIdentifier extends states
 
     /**
      * Get state name
-     * @throws Exception
+     * @throws Throwable
      * @return string
      */
     public function getStateName()
@@ -35,7 +35,7 @@ class StateIdentifier extends states
 
     /**
      * Get state code
-     * @throws Exception
+     * @throws Throwable
      * @return int
      */
     public function getStateCode()
@@ -49,7 +49,7 @@ class StateIdentifier extends states
 
     /**
      * Get alpha code
-     * @throws Exception
+     * @throws Throwable
      * @return string
      */
     public function getAlphaCode()
@@ -64,7 +64,7 @@ class StateIdentifier extends states
     /**
      * Get state code from parameters
      * @param mixed $stateParam State parameter
-     * @throws Exception
+     * @throws Throwable
      * @return string
      */
     public function getStateCodeFromInput($stateParam)
@@ -86,7 +86,7 @@ class StateIdentifier extends states
      * Get tax type
      * @param mixed $stateParam State parameter
      * @param float $rate Rate of GST
-     * @throws Exception
+     * @throws Throwable
      * @return array
      */
     public function taxType($stateParam, $rate)
@@ -108,7 +108,7 @@ class StateIdentifier extends states
     /**
      * Find state data from state parameters
      * @param array $stateParam State parameter
-     * @throws Exception
+     * @throws Throwable
      * @return array
      */
     public function findStateFromInput(array $stateParam)
@@ -139,7 +139,7 @@ class StateIdentifier extends states
     /**
      * Identify the type of state parameter
      * @param mixed $stateParam State parameter
-     * @throws Exception
+     * @throws Throwable
      * @return mixed
      */
     protected function identifyStateData($stateParam)

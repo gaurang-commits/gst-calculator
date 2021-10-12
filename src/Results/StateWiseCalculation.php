@@ -27,7 +27,7 @@ class StateWiseCalculation extends StateIdentifier
 
     /**
      * Get all data
-     * @throws Exception
+     * @throws Throwable
      * @return array
      */
     public function getAllData()
@@ -46,7 +46,7 @@ class StateWiseCalculation extends StateIdentifier
 
     /**
      * Get state details
-     * @throws Exception
+     * @throws Throwable
      * @return array
      */
     public function getStateDetails()
@@ -60,7 +60,7 @@ class StateWiseCalculation extends StateIdentifier
 
     /**
      * Get GST type
-     * @throws Exception
+     * @throws Throwable
      * @return array
      */
     public function getGstType()
@@ -74,7 +74,7 @@ class StateWiseCalculation extends StateIdentifier
 
     /**
      * Prepare state array
-     * @throws Exception
+     * @throws Throwable
      * @return array
      */
     public function prepareStateData()

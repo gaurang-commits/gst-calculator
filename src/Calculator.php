@@ -27,7 +27,7 @@ class Calculator
      * Get GST from cost
      * @param float $cost cost for calculation
      * @param float $rate GST rate
-     * @throws Exception
+     * @throws Throwable
      * @return string
      */
     public static function fromCost(float $cost, float $rate): self
@@ -42,7 +42,7 @@ class Calculator
     /**
      * Get state details
      * @param mixed $state state parameters
-     * @throws Exception
+     * @throws Throwable
      * @return object
      */
     public static function stateDetails($state): StateIdentifier
@@ -60,7 +60,7 @@ class Calculator
      * @param mixed $to destination state
      * @param float $cost cost for calculation
      * @param float $rate GST rate
-     * @throws Exception
+     * @throws Throwable
      * @return object
      */
     public static function stateData($from, $to, $cost, $rate): StateWiseCalculation
@@ -74,7 +74,7 @@ class Calculator
 
     /**
      * Get GST amount
-     * @throws Exception
+     * @throws Throwable
      * @return float
      */
     public function getGst(): float
@@ -88,7 +88,7 @@ class Calculator
 
     /**
      * Get total amount including GST
-     * @throws Exception
+     * @throws Throwable
      * @return float
      */
     public function getTotalWithGst(): float
