@@ -14,12 +14,8 @@ class Calculator
 
     public function __construct(float $cost, float $rate)
     {
-        try {
             $this->cost = $cost;
             $this->rate = $rate;
-        } catch (Throwable $e) {
-            return $e;
-        }
     }
 
     /**
