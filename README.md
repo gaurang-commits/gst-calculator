@@ -10,7 +10,7 @@
 You can install the package via composer:
 
 ```bash
-composer require gaurang-commits/gst-calculator
+composer require gaurangsharma/gst-calculator
 ```
 
 ## Usage
