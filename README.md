@@ -16,10 +16,24 @@ composer require gaurang-commits/gst-calculator
 ## Usage
 
 ```php
-use Gaurang\GstCalculator\GstCalculator;
+use Gaurang\GstCalculator\Calculator;
 
-echo GstCalculator::fromCost(100, 18)->getGst();
+echo Calculator::fromCost(100, 18)->getGst();
+
+echo Calculator::fromCost(1000, 9)->getTotalWithGst();
+
 ```
+New state functions :
+```php
+
+echo Calculator::stateData("HR", 7, 1020, 5)->getGstType();
+
+echo Calculator::stateData("Haryana", "Delhi", 1020, 5)->getAllData();
+
+```
+stateData() accepts 4 arguements sourceState, destinationState, cost, rate.
+* sourceState and destinationState can be a state code, state alpha code, or a state name
+
 
 ## Testing
 
