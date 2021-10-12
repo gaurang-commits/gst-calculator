@@ -5,7 +5,7 @@ namespace Gaurang\GstCalculator\Builder;
 use Exception;
 use Throwable;
 
-class StateIdentifier extends states
+class StateIdentifier extends States
 {
     public $state;
 

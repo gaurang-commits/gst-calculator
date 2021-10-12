@@ -2,7 +2,7 @@
 
 namespace Gaurang\GstCalculator\Builder;
 
-class states
+class States
 {
     /**
      * @var string[][]
