@@ -2,11 +2,10 @@
 
 namespace Gaurang\GstCalculator\Results;
 
+use Exception;
 use Gaurang\GstCalculator\Builder\StateIdentifier;
 use Gaurang\GstCalculator\Calculator;
 use Throwable;
-use Exception;
-
 
 class StateWiseCalculation extends StateIdentifier
 {
@@ -36,13 +35,14 @@ class StateWiseCalculation extends StateIdentifier
         try {
             $gst = Calculator::fromCost($this->cost, $this->rate)->getGst();
             $returnData = $this->prepareStateData();
-            if(is_array($returnData)) {
+            if (is_array($returnData)) {
                 $returnData['gst_amount'] = $gst;
                 $returnData['cost'] = $this->cost;
                 $returnData['total'] = $this->cost + $returnData['gst_amount'];
             } else {
                 throw new Exception('Invalid parameters');
             }
+
             return $returnData;
         } catch (Throwable $e) {
             return $e;
@@ -87,12 +87,11 @@ class StateWiseCalculation extends StateIdentifier
         try {
             $stateData = $this->findStateFromInput([$this->sourceState, $this->destinationState]);
             $data = array_merge($stateData, $this->taxType($stateData, $this->rate));
-            if (!empty($data)) {
+            if (! empty($data)) {
                 return $data;
             } else {
                 throw new Exception('Unexpected error');
             }
-            
         } catch (Throwable $e) {
             return $e;
         }
