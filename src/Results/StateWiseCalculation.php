@@ -2,7 +2,6 @@
 
 namespace Gaurang\GstCalculator\Results;
 
-use Exception;
 use Gaurang\GstCalculator\Builder\StateIdentifier;
 use Gaurang\GstCalculator\Calculator;
 use Throwable;
