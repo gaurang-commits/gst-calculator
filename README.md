@@ -26,7 +26,7 @@ echo Calculator::fromCost(1000, 9)->getTotalWithGst();
 New state functions :
 ```php
 
-echo Calculator::stateData("HR", 7, 1020, 5)->getGstType();
+echo Calculator::stateData("HR", "DL")->getGstType();
 
 echo Calculator::stateData("Haryana", "Delhi", 1020, 5)->getAllData();
 
